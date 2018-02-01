@@ -6,3 +6,11 @@ user-service:
     - mysql-ms-01
 mysql-ms-01:
   image: mysql
+  restart: always
+  environment:
+    MYSQL_ROOT_PASSWORD: 12345
+    MYSQL_DATABASE: micorservice_example
+    MYSQL_USER: spring_user
+    MYSQL_PASSWORD: 12345
+  ports:
+    - "3306:3306"

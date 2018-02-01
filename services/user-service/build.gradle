@@ -1,27 +1,10 @@
-buildscript {
-	ext {
-		springBootVersion = '1.5.9.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
-}
-
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-group = 'de.microservice.example'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
-
-repositories {
-	mavenCentral()
+jar {
+	baseName = 'user-service'
+	version = '0.0.1'
 }
-
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
@@ -29,6 +12,7 @@ dependencies {
 	compile('mysql:mysql-connector-java')
 	compile('org.springframework.data:spring-data-rest-hal-browser')
 	compile('org.springframework.boot:spring-boot-starter-hateoas')
+	compile('org.springframework.retry:spring-retry:' + spring_retry_version)
 //	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:' + jackson_java8_version)
