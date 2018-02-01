@@ -1,0 +1,8 @@
+user-service:
+  build: ./services/user-service
+  ports:
+    - "8080:8080"
+  links:
+    - mysql-ms-01
+mysql-ms-01:
+  image: mysql
