@@ -24,6 +24,9 @@ public class UserRepositoryTest {
 
     @Test
     public void findAll() {
+        Long id = repository.count() + 1;
+        User user = new User(id, "Testuser", "Test", "Test", "test@test.de", LocalDate.of(1989, 1, 1));
+        repository.save(user);
         List<User> result = repository.findAll();
         assertThat(result, not(emptyCollectionOf(User.class)));
     }

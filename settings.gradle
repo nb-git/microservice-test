@@ -1,4 +1,7 @@
 include 'services/user-service'
+include 'services/config'
+include 'services/discovery'
+include 'services/gateway'
 
 rootProject.name = 'microservice-test'
 

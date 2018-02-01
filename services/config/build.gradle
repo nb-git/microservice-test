@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+group = 'de.nibu.config'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+jar {
+	baseName = 'config'
+	version = '0.0.1'
+}
+
+dependencies {
+	compile('org.springframework.cloud:spring-cloud-config-server')
+	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+//	compile('org.springframework.boot:spring-boot-starter-security')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
