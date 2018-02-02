@@ -1,0 +1,35 @@
+#info:
+#  component: Gateway
+#
+server:
+  port: ${PORT:9090}
+
+zuul:
+  prefix: /api
+  routes:
+    account:
+      path: /user/**
+      serviceId: user-service
+
+
+#endpoints:
+#  restart:
+#    enabled: true
+#  shutdown:
+#    enabled: true
+#  health:
+#    sensitive: false
+#
+#ribbon:
+#  eureka:
+#    enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery:8761/eureka/
+    register-with-eureka: false
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG

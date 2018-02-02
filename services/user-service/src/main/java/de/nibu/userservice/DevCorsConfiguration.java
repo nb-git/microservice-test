@@ -1,4 +1,4 @@
-package de.microservice.example.microserviceexample;
+package de.nibu.userservice;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

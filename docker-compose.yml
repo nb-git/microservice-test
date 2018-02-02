@@ -1,9 +1,21 @@
 version: '2'
 services:
-  user-service:
-    build: ./services/user-service
+  discovery:
+    image: nibu/discovery
     ports:
-      - "8080:8080"
+      - "8761:8761"
+  gateway:
+    image: nibu/gateway
+    ports:
+      - "9090:9090"
+    depends_on:
+      - discovery
+  user-service:
+    image: nibu/user-service
+    ports:
+      - "2222:2222"
+    depends_on:
+      - discovery
     links:
       - mysql-ms-01
   mysql-ms-01:

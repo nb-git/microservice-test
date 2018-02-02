@@ -1,4 +1,4 @@
-package de.microservice.example.microserviceexample;
+package de.nibu.userservice;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

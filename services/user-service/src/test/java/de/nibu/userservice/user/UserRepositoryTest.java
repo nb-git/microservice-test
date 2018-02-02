@@ -1,4 +1,4 @@
-package de.microservice.example.microserviceexample.user;
+package de.nibu.userservice.user;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

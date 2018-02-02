@@ -1,4 +1,4 @@
-package de.microservice.example.microserviceexample.util;
+package de.nibu.userservice.util;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
