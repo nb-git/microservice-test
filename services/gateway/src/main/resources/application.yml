@@ -10,7 +10,9 @@ zuul:
     account:
       path: /user/**
       serviceId: user-service
-
+    eureka:
+      path: /eureka/**
+      serviceId: eureka
 
 #endpoints:
 #  restart:

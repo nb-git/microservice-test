@@ -15,3 +15,5 @@ eureka:
           instanceId: ${spring.application.name}:${random.value}
   client:
     registerWithEureka: false
+    service-url:
+      default-zone: http://discUser:discPassword@localhost:${port}/eureka/

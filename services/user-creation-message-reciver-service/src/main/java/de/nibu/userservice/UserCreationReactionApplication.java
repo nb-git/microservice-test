@@ -1,10 +1,12 @@
 package de.nibu.userservice;
 
+import de.nibu.userservice.creation.ConsumerChannels;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -15,6 +17,7 @@ import javax.sql.DataSource;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableRetry
+@EnableBinding(ConsumerChannels.class)
 public class UserCreationReactionApplication {
 
     /**

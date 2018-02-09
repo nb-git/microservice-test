@@ -9,7 +9,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @Configuration
-@Profile("dev")
+@Profile(value = {"dev", "standalone"})
 public class DevCorsConfiguration {
 
     @Bean

@@ -1,6 +1,8 @@
 package de.nibu.userservice.creation;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -10,6 +12,8 @@ import java.time.LocalDate;
 @Data
 @Entity
 @Table(name = "user_creation_data")
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserCreation {
 
     @Id
@@ -22,7 +26,6 @@ public class UserCreation {
     private String username;
 
     @NotNull
-    @Past
     @Column(name = "user_creation_date")
     private LocalDate creationDate;
 }

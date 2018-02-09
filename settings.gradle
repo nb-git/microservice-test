@@ -2,6 +2,7 @@ include 'services/user-service'
 include 'services/config'
 include 'services/discovery'
 include 'services/gateway'
+include 'services/user-creation-message-reciver-service'
 
 rootProject.name = 'microservice-test'
 
