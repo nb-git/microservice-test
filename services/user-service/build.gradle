@@ -26,7 +26,8 @@ dependencies {
 	compile('com.fasterxml.jackson.datatype:jackson-datatype-jdk8:' + jackson_javadata8_version)
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('com.h2database:h2:' + h2_version)
+    testCompile('org.springframework.cloud:spring-cloud-stream-test-support')
+    testCompile('com.h2database:h2:' + h2_version)
 //	testCompile('org.springframework.security:spring-security-test')
 }
 

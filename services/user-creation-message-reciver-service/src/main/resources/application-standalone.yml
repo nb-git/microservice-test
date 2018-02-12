@@ -24,12 +24,12 @@ spring:
           userCreationBroadcasts:
             content-type: application/json
             destination: user-update-pub-sub
-          userUpdateBroadcasts:
-            destination: user-creation-pub-sub
-            content-type: application/json
-          userDeleteBroadcasts:
-            destination: user-deletion-pub-sub
-            content-type: application/json
+#          userUpdateBroadcasts:
+#            destination: user-creation-pub-sub
+#            content-type: application/json
+#          userDeleteBroadcasts:
+#            destination: user-deletion-pub-sub
+#            content-type: application/json
   rabbitmq:
     addresses: localhost:5672
 logging:

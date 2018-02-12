@@ -1,21 +1,45 @@
 version: '2'
 services:
-  discovery:
-    image: nibu/discovery
+#  discovery:
+#    image: nibu/discovery
+#    ports:
+#      - "8761:8761"
+#  gateway:
+#    image: nibu/gateway
+#    ports:
+#      - "9090:9090"
+#    depends_on:
+#      - discovery
+#  user-service:
+#    image: nibu/user-service
+#    ports:
+#      - "2222:2222"
+#    depends_on:
+#      - discovery
+#    links:
+#      - mysql-ms-01
+#      - rabbit-mq
+#  user-creation-message-service:
+#    image: nibu/user-creation-message-reciver-service
+#    ports:
+#      - "2244:2244"
+#    depends_on:
+#      - discovery
+#    links:
+#      - mysql-ms-01
+#      - rabbit-mq
+  rabbit-mq:
+    image: rabbitmq:3
     ports:
-      - "8761:8761"
-  gateway:
-    image: nibu/gateway
+      - "5672:5672"
+  mysql-ms-01:
+    image: mysql:latest
     ports:
-      - "9090:9090"
-    depends_on:
-      - discovery
-  user-service:
-    image: nibu/user-service
-    ports:
-      - "2222:2222"
-    depends_on:
-      - discovery
-    links:
-      - mysql-ms-01
-      - rabbit-mq
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+      - MYSQL_DATABASE=micorservice_example
+      - MYSQL_USER=spring_user
+      - MYSQL_PASSWORD=12345
+    volumes:
+      - ./db/mysql/:/docker-entrypoint-initdb.d/:ro
